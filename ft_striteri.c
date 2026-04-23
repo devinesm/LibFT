@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ipinto-m <ipinto-m@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/20 16:05:13 by ipinto-m          #+#    #+#             */
-/*   Updated: 2026/04/23 16:01:59 by ipinto-m         ###   ########.fr       */
+/*   Created: 2026/04/23 15:47:18 by ipinto-m          #+#    #+#             */
+/*   Updated: 2026/04/23 15:51:14 by ipinto-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-void	*ft_memchr(const void *ptr, int value, size_t length)
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	size_t			index;
-	unsigned char	*byte_ptr;
-	unsigned char	byte_value;
+	unsigned int	index;
 
+	if (!s || !f)
+		return ;
 	index = 0;
-	byte_ptr = (unsigned char *)ptr;
-	byte_value = (unsigned char)value;
-	while (index < length)
+	while (s[index])
 	{
-		if (byte_ptr[index] == byte_value)
-			return ((void *)&byte_ptr[index]);
+		f(index, &s[index]);
 		index++;
 	}
-	return (NULL);
 }

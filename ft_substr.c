@@ -1,30 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ipinto-m <ipinto-m@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/20 16:05:13 by ipinto-m          #+#    #+#             */
-/*   Updated: 2026/04/23 16:01:59 by ipinto-m         ###   ########.fr       */
+/*   Created: 2026/04/23 14:03:16 by ipinto-m          #+#    #+#             */
+/*   Updated: 2026/04/23 14:09:07 by ipinto-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-void	*ft_memchr(const void *ptr, int value, size_t length)
+char	*ft_substr(char const *str, unsigned int start, size_t len)
 {
-	size_t			index;
-	unsigned char	*byte_ptr;
-	unsigned char	byte_value;
+	char	*substr;
+	size_t	str_len;
+	size_t	index;
 
+	if (!str)
+		return (NULL);
+	str_len = ft_strlen(str);
+	if (start >= str_len)
+		return (ft_strdup(""));
+	if (len > str_len - start)
+		len = str_len - start;
+	substr = (char *)malloc((len + 1) * sizeof(char));
+	if (!substr)
+		return (NULL);
 	index = 0;
-	byte_ptr = (unsigned char *)ptr;
-	byte_value = (unsigned char)value;
-	while (index < length)
+	while (index < len)
 	{
-		if (byte_ptr[index] == byte_value)
-			return ((void *)&byte_ptr[index]);
+		substr[index] = str[start + index];
 		index++;
 	}
-	return (NULL);
+	substr[index] = '\0';
+	return (substr);
 }

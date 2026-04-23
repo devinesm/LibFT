@@ -1,30 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ipinto-m <ipinto-m@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/20 16:05:13 by ipinto-m          #+#    #+#             */
-/*   Updated: 2026/04/23 16:01:59 by ipinto-m         ###   ########.fr       */
+/*   Created: 2026/04/23 17:01:23 by ipinto-m          #+#    #+#             */
+/*   Updated: 2026/04/23 17:03:09 by ipinto-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-void	*ft_memchr(const void *ptr, int value, size_t length)
+void	ft_putchar_fd(char c, int fd)
 {
-	size_t			index;
-	unsigned char	*byte_ptr;
-	unsigned char	byte_value;
-
-	index = 0;
-	byte_ptr = (unsigned char *)ptr;
-	byte_value = (unsigned char)value;
-	while (index < length)
-	{
-		if (byte_ptr[index] == byte_value)
-			return ((void *)&byte_ptr[index]);
-		index++;
-	}
-	return (NULL);
+	write(fd, &c, 1);
 }

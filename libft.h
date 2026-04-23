@@ -6,7 +6,7 @@
 /*   By: ipinto-m <ipinto-m@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/14 15:43:43 by ipinto-m          #+#    #+#             */
-/*   Updated: 2026/04/20 20:00:51 by ipinto-m         ###   ########.fr       */
+/*   Updated: 2026/04/23 17:26:07 by ipinto-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
@@ -17,6 +17,10 @@
  * malloc usage - function used for dynamic memory allocation
  */
 # include <stdlib.h>
+/*
+ * write usage
+ */
+# include <unistd.h>
 
 /*
  * <ctype.h> functions
@@ -122,11 +126,11 @@ void	*ft_memchr(const void *ptr, int value, size_t length);
  * ft_memcmp.c
  * return: returns the difference between two pieces of memory at a specific byte
  */
-int	ft_memcmp(const void *s1, const void *s2, size_t size);
+int		ft_memcmp(const void *s1, const void *s2, size_t size);
 /*
  * ft_strnstr
- * return: returns haystack if needle is empty or returns the pointer to the beggining
- * of the word in the haystack
+ * return: returns haystack if needle is empty or returns the pointer to the
+ * beggining of the word in the haystack
  */
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 /*
@@ -147,12 +151,78 @@ char	*ft_strdup(const char *s1);
  *
  * obs: use of long to prevent overflow
  */
-int	ft_atoi(const char *str);
+int		ft_atoi(const char *str);
 /*
  * ft_calloc
  * return: reserves a piece of memory and fill it with zeros.
  * after that, returns the memory
  */
 void	*ft_calloc(size_t len, size_t size);
+
+/**/
+
+/*
+ * additional functions
+ */
+
+/*
+ * ft_substr
+ * return: char pointer with a extract of the initial string
+ */
+char	*ft_substr(char const *str, unsigned int start, size_t len);
+/*
+ * ft_strjoin
+ * return: cat of two strings with alocated memory
+ */
+char	*ft_strjoin(char const *s1, char const *s2);
+/*
+ * ft_strtrim
+ * return: char pointer to the trim version of the str.
+ * it removes specific characters in the start and end of
+ * a string
+ */
+char	*ft_strtrim(char const *s1, char const *set);
+/*
+ * ft_split
+ * returns: double pointer that splits a string in a char
+ * and the keeps the substring in an array
+ */
+char	**ft_split(char const *s, char c);
+/*
+ * ft_itoa
+ * return: converts an interger to a string
+ */
+char	*ft_itoa(int n);
+/*
+ * ft_strmapi
+ * return: it creates a new string based on the original one,
+ * applying a function to which character
+ */
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+/*
+ * ft_striteri
+ * return: same as last, but in the original strin
+ */
+void	ft_striteri(char *s, void (*f)(unsigned int, char *));
+/*
+ * ft_putchar_fd
+ * return: non.
+ */
+void	ft_putchar_fd(char c, int fd);
+/*
+ * ft_putstr_fd
+ * return: non.
+ */
+void	ft_putstr_fd(char *s, int fd);
+/*
+ * ft_putendl_fd
+ * return: non
+ */
+void	ft_putendl_fd(char *s, int fd);
+/*
+ * ft_putnbr_fd
+ * return: non
+ * */
+void	ft_putnbr_fd(int n, int fd);
 int		main(int argc, char **argv);
 #endif

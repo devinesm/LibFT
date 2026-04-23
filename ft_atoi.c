@@ -6,14 +6,14 @@
 /*   By: ipinto-m <ipinto-m@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 19:19:14 by ipinto-m          #+#    #+#             */
-/*   Updated: 2026/04/20 19:34:29 by ipinto-m         ###   ########.fr       */
+/*   Updated: 2026/04/23 16:03:20 by ipinto-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 int	ft_atoi(const char *str)
 {
-	int	index;
-	int	sign;
-	long	result;
+	int			index;
+	int			sign;
+	long		result;
 
 	index = 0;
 	sign = 1;
