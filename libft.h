@@ -6,7 +6,7 @@
 /*   By: ipinto-m <ipinto-m@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/14 15:43:43 by ipinto-m          #+#    #+#             */
-/*   Updated: 2026/04/23 17:26:07 by ipinto-m         ###   ########.fr       */
+/*   Updated: 2026/04/23 18:50:49 by ipinto-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
@@ -21,6 +21,14 @@
  * write usage
  */
 # include <unistd.h>
+
+/**/
+
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}	t_list;
 
 /*
  * <ctype.h> functions
@@ -224,5 +232,57 @@ void	ft_putendl_fd(char *s, int fd);
  * return: non
  * */
 void	ft_putnbr_fd(int n, int fd);
+
+/**/
+
+/*
+ * linked list
+ */
+
+/*
+ * ft_lstnew
+ * return: new node pointer
+ */
+t_list	*ft_lstnew(void *content);
+/*
+ * ft_lstadd_front
+ * return: non
+ */
+void	ft_lstadd_front(t_list **lst, t_list *new);
+/*
+ * ft_lstsize
+ * return: amount of nodes in a list
+ */
+int		ft_lstsize(t_list *lst);
+/*
+ * ft_lstlast
+ * return: last node of list
+ */
+t_list	*ft_lstlast(t_list *lst);
+/*
+ * ft_lstadd_back
+ * return: non
+ */
+void	ft_lstadd_back(t_list **lst, t_list *new);
+/*
+ * ft_lstdelone
+ * return: non
+ */
+void	ft_lstdelone(t_list *lst, void (*del)(void *));
+/*
+ * ft_lstclear
+ * return: non
+ */
+void	ft_lstclear(t_list **lst, void (*del)(void *));
+/*
+ * ft_lstiter
+ * return: non
+ */
+void	ft_lstiter(t_list *lst, void (*f)(void *));
+/*
+ * ft_lstmap
+ * return: new list with node modified by a function
+ */
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 int		main(int argc, char **argv);
 #endif
