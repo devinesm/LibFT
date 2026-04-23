@@ -6,7 +6,7 @@
 /*   By: ipinto-m <ipinto-m@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/14 15:43:43 by ipinto-m          #+#    #+#             */
-/*   Updated: 2026/04/23 18:50:49 by ipinto-m         ###   ########.fr       */
+/*   Updated: 2026/04/23 19:06:38 by ipinto-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
@@ -284,5 +284,4 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
  * return: new list with node modified by a function
  */
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
-int		main(int argc, char **argv);
 #endif
