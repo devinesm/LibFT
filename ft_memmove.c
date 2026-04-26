@@ -6,22 +6,22 @@
 /*   By: ipinto-m <ipinto-m@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/16 17:46:47 by ipinto-m          #+#    #+#             */
-/*   Updated: 2026/04/16 18:11:27 by ipinto-m         ###   ########.fr       */
+/*   Updated: 2026/04/26 15:18:50 by ipinto-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t length)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	size_t	index;
 
 	if (!src && !dest)
 		return (NULL);
 	if (dest < src)
-		ft_memcpy(dest, src, length);
+		ft_memcpy(dest, src, n);
 	else
 	{
-		index = length;
+		index = n;
 		while (index > 0)
 		{
 			index--;

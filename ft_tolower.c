@@ -6,14 +6,14 @@
 /*   By: ipinto-m <ipinto-m@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 14:28:46 by ipinto-m          #+#    #+#             */
-/*   Updated: 2026/04/20 14:29:56 by ipinto-m         ###   ########.fr       */
+/*   Updated: 2026/04/26 15:21:34 by ipinto-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-int	ft_tolower(int argument)
+int	ft_tolower(int c)
 {
-	if ((argument >= 'A') && (argument <= 'Z'))
-		return (argument + 32);
-	return (argument);
+	if ((c >= 'A') && (c <= 'Z'))
+		return (c + 32);
+	return (c);
 }

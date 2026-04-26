@@ -6,20 +6,20 @@
 /*   By: ipinto-m <ipinto-m@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/16 17:06:29 by ipinto-m          #+#    #+#             */
-/*   Updated: 2026/04/16 17:12:01 by ipinto-m         ###   ########.fr       */
+/*   Updated: 2026/04/26 15:14:58 by ipinto-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-void	*ft_memset(void *str, int value, size_t length)
+void	*ft_memset(void *s, int c, size_t n)
 {
 	size_t	index;
 
 	index = 0;
-	while (index < length)
+	while (index < n)
 	{
-		((unsigned char *)str)[index] = (unsigned char)value;
+		((unsigned char *)s)[index] = (unsigned char)c;
 		index++;
 	}
-	return (str);
+	return (s);
 }

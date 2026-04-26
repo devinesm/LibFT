@@ -6,12 +6,12 @@
 /*   By: ipinto-m <ipinto-m@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/14 16:03:20 by ipinto-m          #+#    #+#             */
-/*   Updated: 2026/04/14 16:07:26 by ipinto-m         ###   ########.fr       */
+/*   Updated: 2026/04/26 15:10:41 by ipinto-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-int	ft_isdigit(int argument)
+int	ft_isdigit(int c)
 {
-	return ((argument >= '0') && (argument <= '9'));
+	return ((c >= '0') && (c <= '9'));
 }

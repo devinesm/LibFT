@@ -6,12 +6,12 @@
 /*   By: ipinto-m <ipinto-m@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/16 18:13:02 by ipinto-m          #+#    #+#             */
-/*   Updated: 2026/04/16 18:56:45 by ipinto-m         ###   ########.fr       */
+/*   Updated: 2026/04/26 15:20:02 by ipinto-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dest, const char *src, size_t size)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t	index;
 	size_t	src_length;
@@ -22,9 +22,9 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 		return (src_length);
 	while (src[index] && index < (size - 1))
 	{
-		dest[index] = src[index];
+		dst[index] = src[index];
 		index++;
 	}
-	dest[index] = '\0';
+	dst[index] = '\0';
 	return (src_length);
 }

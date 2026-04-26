@@ -6,7 +6,7 @@
 /*   By: ipinto-m <ipinto-m@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/14 15:43:43 by ipinto-m          #+#    #+#             */
-/*   Updated: 2026/04/23 19:06:38 by ipinto-m         ###   ########.fr       */
+/*   Updated: 2026/04/26 15:35:36 by ipinto-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
@@ -42,18 +42,18 @@ typedef struct s_list
  * if the argument is validated as true,
  * it will return a number different of 0
  */
-int		ft_isalpha(int argument);
-int		ft_isdigit(int argument);
-int		ft_isalnum(int argument);
-int		ft_isascii(int argument);
-int		ft_isprint(int argument);
+int		ft_isalpha(int c);
+int		ft_isdigit(int c);
+int		ft_isalnum(int c);
+int		ft_isascii(int c);
+int		ft_isprint(int c);
 
 /*
  * ft_to...
  * return: all lower/upper case
 */
-int		ft_toupper(int argument);
-int		ft_tolower(int argument);
+int		ft_toupper(int c);
+int		ft_tolower(int c);
 
 /**/
 
@@ -65,31 +65,31 @@ int		ft_tolower(int argument);
  * ft_strlen
  * return: size of string
  */
-size_t	ft_strlen(const char *str);
+size_t	ft_strlen(const char *s);
 /*
  * ft_memset
  * return: return a generic pointer to str
  */
-void	*ft_memset(void *str, int value, size_t length);
+void	*ft_memset(void *s, int c, size_t m);
 /*
  * ft_bzero
  * return: return a generic pointer to str
  *
  * obs: ft_memset usage
  */
-void	*ft_bzero(void *str, size_t length);
+void	*ft_bzero(void *s, size_t n);
 /*
  * ft_memcpy
  * return: return a generic pointer to dest
  */
-void	*ft_memcpy(void *dest, const void *src, size_t length);
+void	*ft_memcpy(void *dest, const void *src, size_t n);
 /*
  * ft_memmove
  * return: return a generic pointer to dest
  *
  * obs: ft_memcpy usage
  */
-void	*ft_memmove(void *dest, const void *src, size_t length);
+void	*ft_memmove(void *dest, const void *src, size_t n);
 /*
  * ft_strlcpy
  * return: return the src length. 
@@ -98,18 +98,18 @@ void	*ft_memmove(void *dest, const void *src, size_t length);
  * If the returned value is greater or equal to the size,
  * it means that the string didn't fit or has been cutted.
  */
-size_t	ft_strlcpy(char *dest, const char *src, size_t size);
+size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 /*
  * ft_strlcat
  * return: return the total length of the string it tried to creat.
  * */
-size_t	ft_strlcat(char *dest, const char *src, size_t size);
+size_t	ft_strlcat(char *dst, const char *src, size_t size);
 /*
  * ft_strchr
  * return: returns the first occurance of the character in the string,
  * also the characther can be '\0'.
  */
-char	*ft_strchr(const char *str, int character);
+char	*ft_strchr(const char *s, int c);
 /*
  * ft_strrchr
  * return: returns the last occurance of the character in the string.
@@ -117,35 +117,35 @@ char	*ft_strchr(const char *str, int character);
  * obs: Protection of size_t -> As size_t does not accept negative numbers,
  * if it was while (index >= 0), when index--, it would turn negative.
  */
-char	*ft_strrchr(const char *str, int character);
+char	*ft_strrchr(const char *str, int c);
 /*
  * ft_strncmp
  * return: if s1 and s2 are equal, it returns 0.
  * otherwise it returns the ascii difference between them
  */
-int		ft_strncmp(const char *s1, const char *s2, size_t size);
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
 /*
  * ft_memchr
  * return: returns a specific byte in a memory block, regardless of
  * what's inside (can be text, numbers, e.g.).
  */
-void	*ft_memchr(const void *ptr, int value, size_t length);
+void	*ft_memchr(const void *str, int c, size_t n);
 /*
  * ft_memcmp.c
  * return: returns the difference between two pieces of memory at a specific byte
  */
-int		ft_memcmp(const void *s1, const void *s2, size_t size);
+int		ft_memcmp(const void *s1, const void *s2, size_t n);
 /*
  * ft_strnstr
  * return: returns haystack if needle is empty or returns the pointer to the
  * beggining of the word in the haystack
  */
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
+char	*ft_strnstr(const char *big, const char *little, size_t len);
 /*
  * ft_strdup
  * return: it creates a space for the memory and allocates with the copy str
  */
-char	*ft_strdup(const char *s1);
+char	*ft_strdup(const char *s);
 
 /**/
 
@@ -159,13 +159,13 @@ char	*ft_strdup(const char *s1);
  *
  * obs: use of long to prevent overflow
  */
-int		ft_atoi(const char *str);
+int		ft_atoi(const char *nptr);
 /*
  * ft_calloc
  * return: reserves a piece of memory and fill it with zeros.
  * after that, returns the memory
  */
-void	*ft_calloc(size_t len, size_t size);
+void	*ft_calloc(size_t nmemb, size_t size);
 
 /**/
 
@@ -177,7 +177,7 @@ void	*ft_calloc(size_t len, size_t size);
  * ft_substr
  * return: char pointer with a extract of the initial string
  */
-char	*ft_substr(char const *str, unsigned int start, size_t len);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
 /*
  * ft_strjoin
  * return: cat of two strings with alocated memory

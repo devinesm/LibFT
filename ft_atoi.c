@@ -6,10 +6,10 @@
 /*   By: ipinto-m <ipinto-m@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 19:19:14 by ipinto-m          #+#    #+#             */
-/*   Updated: 2026/04/23 16:03:20 by ipinto-m         ###   ########.fr       */
+/*   Updated: 2026/04/26 15:30:39 by ipinto-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-int	ft_atoi(const char *str)
+int	ft_atoi(const char *nptr)
 {
 	int			index;
 	int			sign;
@@ -18,17 +18,17 @@ int	ft_atoi(const char *str)
 	index = 0;
 	sign = 1;
 	result = 0;
-	while (str[index] == ' ' || (str[index] >= 9 && str[index] <= 13))
+	while (nptr[index] == ' ' || (nptr[index] >= 9 && nptr[index] <= 13))
 		index++;
-	if (str[index] == '-' || str[index] == '+')
+	if (nptr[index] == '-' || nptr[index] == '+')
 	{
-		if (str[index] == '-')
+		if (nptr[index] == '-')
 			sign = -1;
 		index++;
 	}
-	while (str[index] >= '0' && str[index] <= '9')
+	while (nptr[index] >= '0' && nptr[index] <= '9')
 	{
-		result = result * 10 + (str[index] - '0');
+		result = result * 10 + (nptr[index] - '0');
 		index++;
 	}
 	return ((int) result * sign);

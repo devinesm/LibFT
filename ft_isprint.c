@@ -6,12 +6,12 @@
 /*   By: ipinto-m <ipinto-m@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/16 15:13:57 by ipinto-m          #+#    #+#             */
-/*   Updated: 2026/04/16 15:15:07 by ipinto-m         ###   ########.fr       */
+/*   Updated: 2026/04/26 15:11:45 by ipinto-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-int	ft_isprint(int argument)
+int	ft_isprint(int c)
 {
-	return ((argument > 31) && (argument < 127));
+	return ((c > 31) && (c < 127));
 }

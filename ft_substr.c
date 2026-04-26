@@ -6,20 +6,20 @@
 /*   By: ipinto-m <ipinto-m@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/23 14:03:16 by ipinto-m          #+#    #+#             */
-/*   Updated: 2026/04/23 14:09:07 by ipinto-m         ###   ########.fr       */
+/*   Updated: 2026/04/23 19:54:44 by ipinto-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-char	*ft_substr(char const *str, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*substr;
 	size_t	str_len;
 	size_t	index;
 
-	if (!str)
+	if (!s)
 		return (NULL);
-	str_len = ft_strlen(str);
+	str_len = ft_strlen(s);
 	if (start >= str_len)
 		return (ft_strdup(""));
 	if (len > str_len - start)
@@ -30,7 +30,7 @@ char	*ft_substr(char const *str, unsigned int start, size_t len)
 	index = 0;
 	while (index < len)
 	{
-		substr[index] = str[start + index];
+		substr[index] = s[start + index];
 		index++;
 	}
 	substr[index] = '\0';
