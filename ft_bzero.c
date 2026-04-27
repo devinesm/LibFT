@@ -6,13 +6,12 @@
 /*   By: ipinto-m <ipinto-m@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/16 17:26:53 by ipinto-m          #+#    #+#             */
-/*   Updated: 2026/04/26 15:14:26 by ipinto-m         ###   ########.fr       */
+/*   Updated: 2026/04/27 11:03:32 by ipinto-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-void	*ft_bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
 	ft_memset(s, 0, n);
-	return (s);
 }

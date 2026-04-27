@@ -6,7 +6,7 @@
 /*   By: ipinto-m <ipinto-m@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/14 15:43:43 by ipinto-m          #+#    #+#             */
-/*   Updated: 2026/04/26 15:35:36 by ipinto-m         ###   ########.fr       */
+/*   Updated: 2026/04/27 11:12:09 by ipinto-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
@@ -77,7 +77,7 @@ void	*ft_memset(void *s, int c, size_t m);
  *
  * obs: ft_memset usage
  */
-void	*ft_bzero(void *s, size_t n);
+void	ft_bzero(void *s, size_t n);
 /*
  * ft_memcpy
  * return: return a generic pointer to dest
@@ -117,7 +117,7 @@ char	*ft_strchr(const char *s, int c);
  * obs: Protection of size_t -> As size_t does not accept negative numbers,
  * if it was while (index >= 0), when index--, it would turn negative.
  */
-char	*ft_strrchr(const char *str, int c);
+char	*ft_strrchr(const char *s, int c);
 /*
  * ft_strncmp
  * return: if s1 and s2 are equal, it returns 0.
@@ -129,7 +129,7 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n);
  * return: returns a specific byte in a memory block, regardless of
  * what's inside (can be text, numbers, e.g.).
  */
-void	*ft_memchr(const void *str, int c, size_t n);
+void	*ft_memchr(const void *s, int c, size_t n);
 /*
  * ft_memcmp.c
  * return: returns the difference between two pieces of memory at a specific byte
